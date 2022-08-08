@@ -1,0 +1,45 @@
+html,
+body {
+  margin: 0;
+  padding: 0;
+
+  background: #f5f5f5;
+}
+
+.container {
+  width: 375px;
+  /* height: 1767px; */
+
+  background: #ededed;
+
+  margin: 0 auto;
+}
+
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 15px;
+
+  height: 67px;
+
+  background: #ffffff;
+  border-bottom: 1px solid #c6c6c6;
+}
+
+.logo {
+  width: 127px;
+  height: 33px;
+  background-image: url("images/logo.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.user-avatar {
+  width: 34px;
+  height: 34px;
+  background-image: url("images/user-avatar.png");
+  background-size: contain;
+  border-radius: 50%;
+}
