@@ -59,5 +59,3 @@ posts.forEach((el, i) => {
 });
 
 containerEl.appendChild(postEl);
-
-console.log(containerEl);

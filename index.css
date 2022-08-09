@@ -138,6 +138,12 @@ header {
   background-image: url(images/icon-dm.png);
 }
 
+.like:hover,
+.comment:hover,
+.share:hover {
+  cursor: pointer;
+}
+
 .like-count,
 .username-caption {
   margin: 0;
