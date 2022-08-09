@@ -4,6 +4,8 @@ body {
   padding: 0;
 
   background: #f5f5f5;
+
+  font-family: "Source Sans Pro", sans-serif;
 }
 
 .container {
@@ -36,10 +38,61 @@ header {
   background-repeat: no-repeat;
 }
 
-.user-avatar {
+.your-avatar {
   width: 34px;
   height: 34px;
   background-image: url("images/user-avatar.png");
   background-size: contain;
   border-radius: 50%;
+}
+
+.post-content {
+  background-color: #ffffff;
+}
+
+.user-info {
+  height: 34px;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  gap: 7px;
+}
+
+.avatar {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.user-data {
+  display: inline-block;
+}
+
+.name,
+.location {
+  margin: 0;
+  color: #000000;
+}
+
+.name {
+  font-weight: 700;
+  font-size: 13px;
+  line-height: 16px;
+}
+
+.location {
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 15px;
+}
+
+.post-image {
+  width: 375px;
+  height: 375px;
+}
+
+.body {
+  padding: 21px 10px 16px;
+  height: 78px;
 }
