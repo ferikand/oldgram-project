@@ -1,7 +1,3 @@
-// const postNodes = document.querySelectorAll(".user-info");
-// const postImagesNodes = document.querySelectorAll(".post-image");
-// console.log(postImagesNodes);
-
 const posts = [
   {
     name: "Vincent van Gogh",
@@ -33,16 +29,35 @@ const posts = [
   },
 ];
 
-// postNodes.forEach((postNode, i) => {
-//   posts.forEach((el) => {
-//     if (postNode.classList[1] === el.username) {
-//       postNode.childNodes[1].style.background = `url(${el.avatar})`;
-//       postNode.childNodes[1].style.backgroundSize = "cover";
+const header = document.querySelectorAll("header");
+const postEl = document.createElement("section");
+postEl.classList.add("post-content");
+const containerEl = document.querySelector(".container");
 
-//       postNode.childNodes[3].childNodes[1].textContent = el.name;
-//       postNode.childNodes[3].childNodes[3].textContent = el.location;
+posts.forEach((el, i) => {
+  postEl.innerHTML += `
+    
+        <div class="user-info ${el.username}">
+          <div class="avatar" style='background-image: url(${el.avatar}' )></div>
+          <div class="user-data">
+            <p class="name">${el.name}</p>
+            <p class="location">${el.location}</p>
+          </div>
+        </div>
+        <div class="post-image" style='background-image: url(${el.post}'></div>
+        <div class="body">
+            <div class="icons">
+                <div class="like"></div>
+                <div class="comment"></div>
+                <div class="share"></div>
+            </div>
+            <p class="like-count">${el.likes} likes</p>
+            <p class="username-caption">${el.username} <span class="thin-text">${el.comment}</span></p>
+        </div>        
+    
+  `;
+});
 
-//       console.log(postNode.childNodes);
-//     }
-//   });
-// });
+containerEl.appendChild(postEl);
+
+console.log(containerEl);
