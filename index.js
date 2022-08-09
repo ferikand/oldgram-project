@@ -34,9 +34,10 @@ const header = document.querySelectorAll("header");
 const containerEl = document.querySelector(".container");
 
 function renderPosts() {
-  posts.forEach((el) => {
+  posts.forEach((el, i) => {
     const postEl = document.createElement("section");
     postEl.classList.add("post-content");
+    postEl.innerHTML = "";
     postEl.innerHTML = `
     
         <div class="user-info ${el.username}">
@@ -46,14 +47,14 @@ function renderPosts() {
             <p class="location">${el.location}</p>
           </div>
         </div>
-        <div class="post-image" id='${el.username}' style='background-image: url(${el.post}'></div>
+        <div class="post-image" id='${el.username}' style='background-image: url(${el.post})'></div>
         <div class="body">
             <div class="icons">
-                <div class="like"></div>
+                <div class="like" id='${el.name}-${i}'></div>
                 <div class="comment"></div>
                 <div class="share"></div>
             </div>
-            <p class="like-count">${el.likes} likes</p>
+            <p class="like-count" id='${el.name}'>${el.likes} likes</p>
             <p class="username-caption">${el.username} <span class="thin-text">${el.comment}</span></p>
         </div>        
     
@@ -62,3 +63,22 @@ function renderPosts() {
   });
 }
 renderPosts();
+
+posts.forEach((el, i) => {
+  const pic = document.querySelector(`#${el.username}`);
+  const likeCount = document.getElementById(`${el.name}`);
+  let newLike = el.likes;
+  const heart = document.getElementById(`${el.name}-${i}`);
+  console.log(heart);
+
+  heart.addEventListener("click", () => {
+    newLike++;
+    likeCount.textContent = `${newLike} likes`;
+    heart.style.backgroundColor = "red";
+  });
+
+  pic.addEventListener("dblclick", () => {
+    newLike++;
+    likeCount.textContent = `${newLike} likes`;
+  });
+});
