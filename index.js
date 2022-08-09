@@ -69,12 +69,12 @@ posts.forEach((el, i) => {
   const likeCount = document.getElementById(`${el.name}`);
   let newLike = el.likes;
   const heart = document.getElementById(`${el.name}-${i}`);
-  console.log(heart);
+  //   console.log(heart);
 
   heart.addEventListener("click", () => {
     newLike++;
     likeCount.textContent = `${newLike} likes`;
-    heart.style.backgroundColor = "red";
+    // heart.style.backgroundColor = "red";
   });
 
   pic.addEventListener("dblclick", () => {
