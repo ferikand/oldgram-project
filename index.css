@@ -63,6 +63,7 @@ header {
   height: 34px;
   border-radius: 50%;
   display: inline-block;
+  background-size: cover;
 }
 
 .user-data {
@@ -75,7 +76,10 @@ header {
   color: #000000;
 }
 
-.name {
+.name,
+.username-caption,
+.like-count,
+.thin-text {
   font-weight: 700;
   font-size: 13px;
   line-height: 16px;
@@ -90,9 +94,55 @@ header {
 .post-image {
   width: 375px;
   height: 375px;
+  background-size: cover;
 }
 
 .body {
   padding: 21px 10px 16px;
   height: 78px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  border-bottom: 25px solid #ededed;
+}
+
+.body:last-of-type {
+  border-bottom: none;
+}
+
+.icons {
+  display: flex;
+  justify-content: space-between;
+  width: 105px;
+  height: 23px;
+}
+
+.like,
+.comment,
+.share {
+  height: 23px;
+  width: 23px;
+  background-size: cover;
+}
+
+.like {
+  background-image: url(images/icon-heart.png);
+}
+
+.comment {
+  background-image: url(images/icon-comment.png);
+}
+
+.share {
+  background-image: url(images/icon-dm.png);
+}
+
+.like-count,
+.username-caption {
+  margin: 0;
+}
+
+.thin-text {
+  font-weight: 400;
 }
