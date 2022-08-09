@@ -30,12 +30,14 @@ const posts = [
 ];
 
 const header = document.querySelectorAll("header");
-const postEl = document.createElement("section");
-postEl.classList.add("post-content");
+
 const containerEl = document.querySelector(".container");
 
-posts.forEach((el, i) => {
-  postEl.innerHTML += `
+function renderPosts() {
+  posts.forEach((el) => {
+    const postEl = document.createElement("section");
+    postEl.classList.add("post-content");
+    postEl.innerHTML = `
     
         <div class="user-info ${el.username}">
           <div class="avatar" style='background-image: url(${el.avatar}' )></div>
@@ -44,7 +46,7 @@ posts.forEach((el, i) => {
             <p class="location">${el.location}</p>
           </div>
         </div>
-        <div class="post-image" style='background-image: url(${el.post}'></div>
+        <div class="post-image" id='${el.username}' style='background-image: url(${el.post}'></div>
         <div class="body">
             <div class="icons">
                 <div class="like"></div>
@@ -56,6 +58,7 @@ posts.forEach((el, i) => {
         </div>        
     
   `;
-});
-
-containerEl.appendChild(postEl);
+    containerEl.appendChild(postEl);
+  });
+}
+renderPosts();
